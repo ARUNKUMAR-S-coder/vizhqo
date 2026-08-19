@@ -1,0 +1,454 @@
+/* ==========================================================================
+   VIZHQO Media - "Luxury Meets Modern UI" Design System
+   Inspired by High-End Editorial & Fashion E-Commerce Aesthetics
+   ========================================================================== */
+
+:root {
+  /* Warm Luxury Palette */
+  --bg-canvas: #FAF7F2;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F5EFEB;
+  --bg-alt: #EFE8E1;
+  --bg-card: #FDFBF8;
+
+  /* Obsidian & Inks */
+  --ink: #131118;
+  --ink-light: #2D2A35;
+  --ink-muted: #645F70;
+  --ink-subtle: #918C9C;
+
+  /* Editorial Warm Accents */
+  --terracotta: #D95A27;
+  --terracotta-hover: #C24C1D;
+  --terracotta-soft: #FFF1EC;
+  --terracotta-subtle: #FCE8E1;
+  
+  --amber: #E28723;
+  --amber-soft: #FFF7EB;
+  --gold: #D4AF37;
+  
+  --wine: #72182B;
+  --wine-soft: #FDF0F3;
+  
+  --sage: #3E6B4E;
+  --sage-soft: #EBF5EF;
+
+  /* Borders & Strokes */
+  --border: #ECE5DA;
+  --border-strong: #DDD4C7;
+  --border-accent: rgba(217, 90, 39, 0.35);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 14px rgba(19, 17, 24, 0.04);
+  --shadow-md: 0 12px 32px rgba(19, 17, 24, 0.07);
+  --shadow-lg: 0 24px 60px rgba(19, 17, 24, 0.11);
+  --shadow-glow: 0 10px 30px rgba(217, 90, 39, 0.22);
+
+  /* Typography Families */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-luxury: 'Cormorant Garamond', Georgia, serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--terracotta);
+  color: #FFFFFF;
+}
+
+/* Serif & Luxury Editorial Typography */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.luxury-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.5px;
+}
+
+.luxury-script {
+  font-family: var(--font-luxury);
+  font-style: italic;
+}
+
+.micro-label {
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--terracotta);
+}
+
+/* Ambient Warm Lighting */
+.glow-ambient {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Terracotta Sunset Circle / Arch Graphic */
+.sun-arch-graphic {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #E8703E 0%, #D95A27 70%, #B84719 100%);
+  box-shadow: 0 20px 50px rgba(217, 90, 39, 0.25);
+  pointer-events: none;
+}
+
+/* Luxury Pill Badges */
+.luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button & Action Styling */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--terracotta);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 20px rgba(217, 90, 39, 0.28);
+}
+
+.btn-primary:hover {
+  background: var(--terracotta-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(217, 90, 39, 0.38);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+  border-color: var(--ink);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.28);
+}
+
+.btn-whatsapp:hover {
+  background: #20BA5A;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Card Hover Micro-Interactions */
+.card-hover {
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+/* Image Zoom Container */
+.img-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-zoom-container img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover .img-zoom-container img,
+.img-zoom-container:hover img {
+  transform: scale(1.06);
+}
+
+/* Floating Glassmorphic Pill Cards */
+.glass-pill-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 35px rgba(19, 17, 24, 0.09);
+  border-radius: 20px;
+  padding: 12px 20px;
+}
+
+/* Category Circular Avatar Card */
+.category-circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.category-circle-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: #EFE8E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+
+.category-circle-card:hover .category-circle-avatar {
+  border-color: var(--terracotta);
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 12px 25px rgba(217, 90, 39, 0.22);
+}
+
+/* Value Props Floating Bar */
+.value-props-bar {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px 36px;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1240px;
+  margin: -36px auto 70px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Marquee Animation */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 48px;
+  animation: scrollMarquee 24s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Floating WhatsApp Quick Action Button */
+.wa-float-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.wa-float-btn:hover {
+  transform: scale(1.12) rotate(8deg);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 36px rgba(37, 211, 102, 0.7);
+  }
+}
+
+/* Modal Backdrop & Animations */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 17, 24, 0.75);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border-radius: 28px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-muted);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .value-props-bar {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 24px;
+    gap: 16px;
+    margin: -20px 5% 50px;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
+  }
+  .value-props-bar {
+    grid-template-columns: 1fr;
+    margin: -10px 5% 40px;
+  }
+  .why-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .quote-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .before-after-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .wa-float-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+  }
+}
