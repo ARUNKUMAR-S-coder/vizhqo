@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { getWhatsAppUrl } from '../data/agencyData';
 
 export default function FinalCTA() {
@@ -22,29 +22,31 @@ export default function FinalCTA() {
           transform: 'translate(-50%, -50%)',
           width: 600,
           height: 600,
-          background: 'rgba(255, 85, 32, 0.16)',
+          background: 'rgba(217, 90, 39, 0.16)',
         }}
       />
 
       <div style={{ maxWidth: 780, margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <h2
+          className="luxury-title"
           style={{
             fontSize: 'clamp(2.4rem, 5.5vw, 4rem)',
             fontWeight: 800,
             letterSpacing: '-1.5px',
             lineHeight: 1.12,
             marginBottom: 22,
+            color: '#FFFFFF',
           }}
         >
           Your Brand Deserves to{' '}
-          <span className="serif" style={{ color: 'var(--orange)' }}>
-            Look Better.
+          <span className="serif" style={{ color: 'var(--amber)' }}>
+            Look Exceptional.
           </span>
         </h2>
         <p
           style={{
             fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-            color: 'rgba(255, 255, 255, 0.8)',
+            color: 'rgba(255, 255, 255, 0.85)',
             marginBottom: 40,
             lineHeight: 1.6,
             maxWidth: 580,
@@ -52,7 +54,7 @@ export default function FinalCTA() {
             marginRight: 'auto',
           }}
         >
-          Let's turn your idea into high-converting visuals your customers remember. Fast replies on WhatsApp — no endless forms, no waiting.
+          Let's turn your idea into high-converting visuals your customers remember. Fast replies on WhatsApp and Instagram — no endless forms, no waiting.
         </p>
 
         <div
@@ -68,22 +70,30 @@ export default function FinalCTA() {
             href={getWhatsAppUrl('Hi VIZHQO! I want to start a project with you.')}
             target="_blank"
             rel="noreferrer"
-            className="btn-whatsapp"
-            style={{ padding: '18px 36px', fontSize: 16 }}
+            className="btn-primary"
+            style={{ padding: '18px 36px', fontSize: 16, textDecoration: 'none' }}
           >
-            💬 WhatsApp VIZHQO <span>→</span>
+            Start Your Project <span style={{ color: 'var(--amber)', fontSize: '1.15em', marginLeft: 4 }}>→</span>
           </a>
           <a
             href="mailto:hello@vizhqo.studio"
             className="btn-secondary"
-            style={{ padding: '18px 32px', fontSize: 16 }}
+            style={{
+              padding: '18px 32px',
+              fontSize: 16,
+              background: 'rgba(255, 255, 255, 0.08)',
+              color: '#FFFFFF',
+              borderColor: 'rgba(255, 255, 255, 0.2)',
+              textDecoration: 'none',
+            }}
           >
             ✉️ hello@vizhqo.studio
           </a>
         </div>
 
-        <div style={{ fontSize: 14, color: 'rgba(255, 255, 255, 0.6)', fontWeight: 500 }}>
-          Average response time: <strong>Under 15 minutes</strong> on WhatsApp
+        <div style={{ fontSize: 14, color: 'rgba(255, 255, 255, 0.65)', fontWeight: 500 }}>
+          Average response time:{' '}
+          <strong style={{ color: 'var(--amber)' }}>Under 15 minutes</strong> on WhatsApp
         </div>
       </div>
     </section>

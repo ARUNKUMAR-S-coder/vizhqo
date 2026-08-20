@@ -16,8 +16,11 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import ProjectModal from './components/ProjectModal';
 import { PORTFOLIO_PROJECTS, QUOTE_OPTIONS, getWhatsAppUrl } from './data/agencyData';
+import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 export default function App() {
+  useScrollAnimation();
+  
   const [navScrolled, setNavScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');

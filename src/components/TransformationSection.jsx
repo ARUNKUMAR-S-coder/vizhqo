@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 export default function TransformationSection({ beforeAfterMode, setBeforeAfterMode }) {
   return (
@@ -12,6 +12,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
         overflow: 'hidden',
       }}
     >
+      {/* Ambient Lighting */}
       <div
         className="glow-ambient"
         style={{
@@ -19,37 +20,48 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
           right: -50,
           width: 500,
           height: 500,
-          background: 'rgba(255, 85, 32, 0.15)',
+          background: 'rgba(217, 90, 39, 0.14)',
+        }}
+      />
+      <div
+        className="glow-ambient"
+        style={{
+          bottom: -100,
+          left: -50,
+          width: 420,
+          height: 420,
+          background: 'rgba(226, 135, 35, 0.08)',
         }}
       />
 
       <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <div style={{ textAlign: 'center', marginBottom: 54 }}>
           <div
+            className="micro-label"
             style={{
               display: 'inline-block',
-              background: 'rgba(255, 85, 32, 0.2)',
-              color: 'var(--orange)',
-              border: '1px solid rgba(255, 85, 32, 0.4)',
+              background: 'rgba(217, 90, 39, 0.15)',
+              color: 'var(--terracotta)',
+              border: '1px solid rgba(217, 90, 39, 0.35)',
               padding: '6px 18px',
               borderRadius: 999,
-              fontWeight: 700,
-              fontSize: 13,
               marginBottom: 16,
             }}
           >
             THE POWER OF PERCEPTION
           </div>
           <h2
+            className="luxury-title"
             style={{
               fontSize: 'clamp(2.1rem, 4.4vw, 3.4rem)',
               fontWeight: 800,
               letterSpacing: '-1px',
               marginBottom: 18,
+              color: '#FFFFFF',
             }}
           >
             Good design doesn't just look better.{' '}
-            <span className="serif" style={{ color: 'var(--orange)' }}>
+            <span className="serif" style={{ color: 'var(--terracotta)' }}>
               It changes how customers perceive you.
             </span>
           </h2>
@@ -65,6 +77,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
             <strong style={{ color: '#FFFFFF' }}>Basic presentation = Basic perception.</strong> Customers judge your quality and prices before they ever contact you.
           </p>
 
+          {/* Mode Switcher */}
           <div
             style={{
               display: 'inline-flex',
@@ -79,7 +92,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
             <button
               onClick={() => setBeforeAfterMode('menu')}
               style={{
-                background: beforeAfterMode === 'menu' ? 'var(--orange)' : 'transparent',
+                background: beforeAfterMode === 'menu' ? 'var(--terracotta)' : 'transparent',
                 color: '#FFFFFF',
                 border: 'none',
                 padding: '10px 22px',
@@ -87,7 +100,8 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
                 fontWeight: 700,
                 fontSize: 14,
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
+                transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                boxShadow: beforeAfterMode === 'menu' ? '0 4px 16px rgba(217, 90, 39, 0.35)' : 'none',
               }}
             >
               🍽️ Restaurant Menu Transformation
@@ -95,7 +109,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
             <button
               onClick={() => setBeforeAfterMode('social')}
               style={{
-                background: beforeAfterMode === 'social' ? 'var(--orange)' : 'transparent',
+                background: beforeAfterMode === 'social' ? 'var(--terracotta)' : 'transparent',
                 color: '#FFFFFF',
                 border: 'none',
                 padding: '10px 22px',
@@ -103,7 +117,8 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
                 fontWeight: 700,
                 fontSize: 14,
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
+                transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                boxShadow: beforeAfterMode === 'social' ? '0 4px 16px rgba(217, 90, 39, 0.35)' : 'none',
               }}
             >
               📱 Social Media Creative Shift
@@ -121,6 +136,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
               alignItems: 'stretch',
             }}
           >
+            {/* Before Card */}
             <div
               style={{
                 background: 'rgba(255, 255, 255, 0.04)',
@@ -133,20 +149,39 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
             >
               <div
                 style={{
-                  display: 'inline-block',
-                  background: 'rgba(239, 68, 68, 0.2)',
-                  color: '#F87171',
-                  fontSize: 12.5,
-                  fontWeight: 800,
-                  padding: '4px 12px',
-                  borderRadius: 999,
-                  width: 'fit-content',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
                   marginBottom: 16,
                 }}
               >
-                BEFORE — ORDINARY DESIGN
+                <div
+                  style={{
+                    display: 'inline-block',
+                    background: 'rgba(239, 68, 68, 0.2)',
+                    color: '#F87171',
+                    fontSize: 12.5,
+                    fontWeight: 800,
+                    padding: '4px 12px',
+                    borderRadius: 999,
+                  }}
+                >
+                  BEFORE — ORDINARY DESIGN
+                </div>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-luxury)',
+                    fontSize: 26,
+                    fontWeight: 700,
+                    color: 'var(--amber)',
+                    lineHeight: 1,
+                    opacity: 0.85,
+                  }}
+                >
+                  01
+                </span>
               </div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, fontFamily: 'var(--font-serif)' }}>
                 Standard Black & White Printout
               </h3>
               <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: 14.5, marginBottom: 20 }}>
@@ -170,10 +205,11 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
               </div>
             </div>
 
+            {/* After Card */}
             <div
               style={{
-                background: 'linear-gradient(145deg, rgba(255, 85, 32, 0.15), rgba(255, 255, 255, 0.05))',
-                border: '2px solid var(--orange)',
+                background: 'linear-gradient(145deg, rgba(217, 90, 39, 0.15), rgba(255, 255, 255, 0.05))',
+                border: '2px solid var(--terracotta)',
                 borderRadius: 24,
                 padding: '36px 30px',
                 display: 'flex',
@@ -186,32 +222,52 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
                   position: 'absolute',
                   top: -12,
                   right: 28,
-                  background: 'var(--orange)',
+                  background: 'var(--terracotta)',
                   color: '#FFF',
                   fontSize: 11,
                   fontWeight: 800,
                   padding: '4px 14px',
                   borderRadius: 999,
+                  boxShadow: '0 4px 12px rgba(217, 90, 39, 0.3)',
                 }}
               >
                 VIZHQO UPGRADE
               </div>
               <div
                 style={{
-                  display: 'inline-block',
-                  background: 'rgba(34, 197, 94, 0.2)',
-                  color: '#4ADE80',
-                  fontSize: 12.5,
-                  fontWeight: 800,
-                  padding: '4px 12px',
-                  borderRadius: 999,
-                  width: 'fit-content',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
                   marginBottom: 16,
                 }}
               >
-                AFTER — PREMIUM VIZHQO MENU
+                <div
+                  style={{
+                    display: 'inline-block',
+                    background: 'rgba(34, 197, 94, 0.2)',
+                    color: '#4ADE80',
+                    fontSize: 12.5,
+                    fontWeight: 800,
+                    padding: '4px 12px',
+                    borderRadius: 999,
+                  }}
+                >
+                  AFTER — PREMIUM VIZHQO MENU
+                </div>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-luxury)',
+                    fontSize: 26,
+                    fontWeight: 700,
+                    color: 'var(--amber)',
+                    lineHeight: 1,
+                    opacity: 0.85,
+                  }}
+                >
+                  02
+                </span>
               </div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, fontFamily: 'var(--font-serif)' }}>
                 Artisan Dining Visual Experience
               </h3>
               <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: 14.5, marginBottom: 20 }}>
@@ -222,7 +278,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
                   background: 'rgba(0, 0, 0, 0.4)',
                   borderRadius: 16,
                   padding: '20px',
-                  border: '1px solid rgba(255, 85, 32, 0.3)',
+                  border: '1px solid rgba(217, 90, 39, 0.35)',
                   marginTop: 'auto',
                 }}
               >
@@ -245,6 +301,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
               alignItems: 'stretch',
             }}
           >
+            {/* Before Card */}
             <div
               style={{
                 background: 'rgba(255, 255, 255, 0.04)',
@@ -257,20 +314,39 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
             >
               <div
                 style={{
-                  display: 'inline-block',
-                  background: 'rgba(239, 68, 68, 0.2)',
-                  color: '#F87171',
-                  fontSize: 12.5,
-                  fontWeight: 800,
-                  padding: '4px 12px',
-                  borderRadius: 999,
-                  width: 'fit-content',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
                   marginBottom: 16,
                 }}
               >
-                BEFORE — GENERIC POSTS
+                <div
+                  style={{
+                    display: 'inline-block',
+                    background: 'rgba(239, 68, 68, 0.2)',
+                    color: '#F87171',
+                    fontSize: 12.5,
+                    fontWeight: 800,
+                    padding: '4px 12px',
+                    borderRadius: 999,
+                  }}
+                >
+                  BEFORE — GENERIC POSTS
+                </div>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-luxury)',
+                    fontSize: 26,
+                    fontWeight: 700,
+                    color: 'var(--amber)',
+                    lineHeight: 1,
+                    opacity: 0.85,
+                  }}
+                >
+                  01
+                </span>
               </div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, fontFamily: 'var(--font-serif)' }}>
                 Stock Graphics & Unedited Clips
               </h3>
               <p style={{ color: 'rgba(255, 255, 255, 0.65)', fontSize: 14.5, marginBottom: 20 }}>
@@ -294,10 +370,11 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
               </div>
             </div>
 
+            {/* After Card */}
             <div
               style={{
-                background: 'linear-gradient(145deg, rgba(108, 76, 224, 0.2), rgba(255, 255, 255, 0.05))',
-                border: '2px solid var(--violet)',
+                background: 'linear-gradient(145deg, rgba(217, 90, 39, 0.15), rgba(255, 255, 255, 0.05))',
+                border: '2px solid var(--terracotta)',
                 borderRadius: 24,
                 padding: '36px 30px',
                 display: 'flex',
@@ -310,32 +387,52 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
                   position: 'absolute',
                   top: -12,
                   right: 28,
-                  background: 'var(--violet)',
+                  background: 'var(--terracotta)',
                   color: '#FFF',
                   fontSize: 11,
                   fontWeight: 800,
                   padding: '4px 14px',
                   borderRadius: 999,
+                  boxShadow: '0 4px 12px rgba(217, 90, 39, 0.3)',
                 }}
               >
                 VIZHQO UPGRADE
               </div>
               <div
                 style={{
-                  display: 'inline-block',
-                  background: 'rgba(34, 197, 94, 0.2)',
-                  color: '#4ADE80',
-                  fontSize: 12.5,
-                  fontWeight: 800,
-                  padding: '4px 12px',
-                  borderRadius: 999,
-                  width: 'fit-content',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
                   marginBottom: 16,
                 }}
               >
-                AFTER — RETENTION-FOCUSED REELS
+                <div
+                  style={{
+                    display: 'inline-block',
+                    background: 'rgba(34, 197, 94, 0.2)',
+                    color: '#4ADE80',
+                    fontSize: 12.5,
+                    fontWeight: 800,
+                    padding: '4px 12px',
+                    borderRadius: 999,
+                  }}
+                >
+                  AFTER — RETENTION-FOCUSED REELS
+                </div>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-luxury)',
+                    fontSize: 26,
+                    fontWeight: 700,
+                    color: 'var(--amber)',
+                    lineHeight: 1,
+                    opacity: 0.85,
+                  }}
+                >
+                  02
+                </span>
               </div>
-              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>
+              <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12, fontFamily: 'var(--font-serif)' }}>
                 Pacing, Sound & Visual Hooks
               </h3>
               <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: 14.5, marginBottom: 20 }}>
@@ -346,7 +443,7 @@ export default function TransformationSection({ beforeAfterMode, setBeforeAfterM
                   background: 'rgba(0, 0, 0, 0.4)',
                   borderRadius: 16,
                   padding: '20px',
-                  border: '1px solid rgba(108, 76, 224, 0.4)',
+                  border: '1px solid rgba(217, 90, 39, 0.35)',
                   marginTop: 'auto',
                 }}
               >

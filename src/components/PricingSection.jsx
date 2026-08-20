@@ -12,21 +12,11 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
       }}
     >
       <div style={{ textAlign: 'center', marginBottom: 54 }}>
-        <div
-          style={{
-            display: 'inline-block',
-            background: 'var(--orange-soft)',
-            color: 'var(--orange)',
-            padding: '6px 18px',
-            borderRadius: 999,
-            fontWeight: 700,
-            fontSize: 13,
-            marginBottom: 16,
-          }}
-        >
+        <div className="micro-label" style={{ marginBottom: 14 }}>
           HONEST & ACCESSIBLE PRICING
         </div>
         <h2
+          className="luxury-title"
           style={{
             fontSize: 'clamp(2rem, 4.4vw, 3.3rem)',
             fontWeight: 800,
@@ -36,7 +26,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
           }}
         >
           Premium Design.{' '}
-          <span className="serif" style={{ color: 'var(--orange)' }}>
+          <span className="serif" style={{ color: 'var(--terracotta)' }}>
             Without the Agency Price.
           </span>
         </h2>
@@ -87,7 +77,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
       </div>
 
       <div style={{ textAlign: 'center', marginBottom: 28 }}>
-        <h3 style={{ fontSize: 24, fontWeight: 800, color: 'var(--ink)' }}>
+        <h3 style={{ fontSize: 24, fontWeight: 800, color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>
           Monthly Growth Retainers
         </h3>
         <p style={{ fontSize: 14.5, color: 'var(--ink-muted)' }}>
@@ -112,7 +102,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
               color: pkg.featured ? '#FFFFFF' : 'var(--ink)',
               borderRadius: 24,
               padding: '38px 30px',
-              border: pkg.featured ? '2px solid var(--orange)' : '1px solid var(--border)',
+              border: pkg.featured ? '2px solid var(--terracotta)' : '1px solid var(--border)',
               position: 'relative',
               boxShadow: pkg.featured ? '0 16px 40px rgba(0,0,0,0.2)' : 'var(--shadow-sm)',
               display: 'flex',
@@ -125,7 +115,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
                   position: 'absolute',
                   top: -14,
                   left: 28,
-                  background: 'var(--orange)',
+                  background: 'var(--terracotta)',
                   color: '#FFFFFF',
                   padding: '5px 16px',
                   borderRadius: 999,
@@ -152,7 +142,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 30, flexGrow: 1 }}>
               {pkg.features.map((f, i) => (
                 <div key={i} style={{ fontSize: 13.5, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ color: 'var(--orange)' }}>✓</span>
+                  <span style={{ color: pkg.featured ? 'var(--amber)' : 'var(--terracotta)' }}>✓</span>
                   <span>{f}</span>
                 </div>
               ))}
@@ -177,7 +167,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
           background: '#FFFFFF',
           borderRadius: 28,
           padding: '40px 36px',
-          border: '2px solid var(--orange)',
+          border: '2px solid var(--terracotta)',
           boxShadow: 'var(--shadow-lg)',
         }}
       >
@@ -205,11 +195,11 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
             >
               CUSTOM ESTIMATOR
             </div>
-            <h3 style={{ fontSize: 24, fontWeight: 800, color: 'var(--ink)', marginBottom: 8 }}>
+            <h3 style={{ fontSize: 24, fontWeight: 800, color: 'var(--ink)', marginBottom: 8, fontFamily: 'var(--font-serif)' }}>
               Build Your Own Custom Creative Package
             </h3>
             <p style={{ fontSize: 14, color: 'var(--ink-muted)', marginBottom: 20 }}>
-              Check the exact services you need. Get an immediate transparent estimate and send it directly to our WhatsApp in one click.
+              Check the exact services you need. Get an immediate transparent estimate and send it directly via Instagram DM in one click.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -224,12 +214,12 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
                       gap: 10,
                       padding: '10px 14px',
                       borderRadius: 12,
-                      background: isChecked ? 'var(--orange-soft)' : 'var(--bg-light)',
-                      border: isChecked ? '1px solid var(--orange)' : '1px solid var(--border)',
+                      background: isChecked ? 'var(--terracotta-soft)' : 'var(--bg-light)',
+                      border: isChecked ? '1px solid var(--terracotta)' : '1px solid var(--border)',
                       cursor: 'pointer',
                       fontSize: 13.5,
                       fontWeight: 600,
-                      color: isChecked ? 'var(--orange)' : 'var(--ink)',
+                      color: isChecked ? 'var(--terracotta)' : 'var(--ink)',
                       transition: 'all 0.18s ease',
                     }}
                   >
@@ -243,7 +233,7 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
                           setSelectedServices([...selectedServices, opt.id]);
                         }
                       }}
-                      style={{ accentColor: 'var(--orange)', width: 16, height: 16 }}
+                      style={{ accentColor: 'var(--terracotta)', width: 16, height: 16 }}
                     />
                     <span>{opt.label}</span>
                     <span style={{ marginLeft: 'auto', fontSize: 12, opacity: 0.8 }}>+₹{opt.price}</span>
@@ -276,10 +266,10 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
               href={getWhatsAppUrl(customQuoteWaMsg)}
               target="_blank"
               rel="noreferrer"
-              className="btn-whatsapp"
+              className="btn-primary"
               style={{ width: '100%', padding: '14px 20px', fontSize: 14 }}
             >
-              Send Custom Quote to WhatsApp <span>→</span>
+              Send Quote via Instagram DM <span>→</span>
             </a>
           </div>
         </div>

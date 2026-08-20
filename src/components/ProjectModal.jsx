@@ -66,8 +66,8 @@ export default function ProjectModal({ project, onClose }) {
               transition: 'all 0.2s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--orange)';
-              e.currentTarget.style.borderColor = 'var(--orange)';
+              e.currentTarget.style.background = 'var(--terracotta)';
+              e.currentTarget.style.borderColor = 'var(--terracotta)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)';
@@ -82,7 +82,7 @@ export default function ProjectModal({ project, onClose }) {
             <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 8, flexWrap: 'wrap' }}>
               <span
                 style={{
-                  background: 'var(--orange)',
+                  background: 'var(--terracotta)',
                   color: '#FFFFFF',
                   fontSize: 12,
                   fontWeight: 800,
