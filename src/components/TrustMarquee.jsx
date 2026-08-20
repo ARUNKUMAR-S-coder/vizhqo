@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 export default function TrustMarquee() {
   const items = [
@@ -33,7 +33,7 @@ export default function TrustMarquee() {
                 letterSpacing: '0.3px',
               }}
             >
-              <span style={{ color: 'var(--orange)' }}>{item.icon}</span>
+              <span style={{ color: 'var(--amber)' }}>{item.icon}</span>
               <span>{item.text}</span>
             </div>
           ))}

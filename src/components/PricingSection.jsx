@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { PACKAGES_DATA, QUOTE_OPTIONS, getWhatsAppUrl } from '../data/agencyData';
 
 export default function PricingSection({ selectedServices, setSelectedServices, calculatedQuote, customQuoteWaMsg }) {
@@ -194,8 +194,8 @@ export default function PricingSection({ selectedServices, setSelectedServices, 
             <div
               style={{
                 display: 'inline-block',
-                background: 'var(--orange-soft)',
-                color: 'var(--orange)',
+                background: 'var(--terracotta-soft)',
+                color: 'var(--terracotta)',
                 fontSize: 12,
                 fontWeight: 800,
                 padding: '4px 12px',

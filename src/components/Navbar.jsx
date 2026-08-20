@@ -1,18 +1,31 @@
-﻿import React from 'react';
+import React from 'react';
 import { getWhatsAppUrl } from '../data/agencyData';
 
 export default function Navbar({ navScrolled, mobileMenuOpen, setMobileMenuOpen, scrollToSection }) {
   return (
     <>
+      {/* Top Promo Bar */}
+      <div
+        style={{
+          background: 'var(--bg-alt)',
+          color: 'var(--ink)',
+          padding: '8px 5%',
+          fontSize: 13,
+          textAlign: 'center',
+        }}
+      >
+        New Arrivals • 48‑Hr Delivery • WhatsApp Support • From ₹49
+      </div>
+
       <header
         style={{
           position: 'sticky',
           top: 0,
           zIndex: 100,
           backgroundColor: navScrolled ? 'rgba(250, 248, 245, 0.92)' : 'transparent',
-          backdropFilter: navScrolled ? 'blur(16px)' : 'none',
+          backdropFilter: navScrolled ? 'blur(12px)' : 'none',
           borderBottom: navScrolled ? '1px solid var(--border)' : '1px solid transparent',
-          padding: navScrolled ? '14px 5%' : '20px 5%',
+          padding: navScrolled ? '12px 5%' : '18px 5%',
           transition: 'all 0.3s ease',
           display: 'flex',
           justifyContent: 'space-between',
@@ -34,14 +47,23 @@ export default function Navbar({ navScrolled, mobileMenuOpen, setMobileMenuOpen,
           <span style={{ fontSize: 24, fontWeight: 800, letterSpacing: '-0.5px', color: 'var(--ink)' }}>
             VIZHQO
           </span>
-          <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--orange)', display: 'inline-block' }} />
+          <span
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: '50%',
+              background: 'var(--terracotta)',
+              display: 'inline-block',
+            }}
+          />
         </button>
 
-        <nav className="nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+        {/* Desktop Nav Links */}
+        <nav className="nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
           {[
             { id: 'work', label: 'Selected Work' },
             { id: 'services', label: 'Services' },
-            { id: 'transformation', label: 'Before / After' },
+            { id: 'transformation', label: 'Before & After' },
             { id: 'why', label: 'Why Us' },
             { id: 'process', label: 'Process' },
             { id: 'pricing', label: 'Pricing & Quote' },
@@ -58,7 +80,7 @@ export default function Navbar({ navScrolled, mobileMenuOpen, setMobileMenuOpen,
                 color: 'var(--ink-muted)',
                 transition: 'color 0.2s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--orange)')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--terracotta)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--ink-muted)')}
             >
               {link.label}
@@ -82,7 +104,7 @@ export default function Navbar({ navScrolled, mobileMenuOpen, setMobileMenuOpen,
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             style={{
-              display: 'none',
+              display: 'none', // will be shown via media query in CSS
               background: 'var(--bg-surface)',
               border: '1px solid var(--border-strong)',
               borderRadius: 12,
@@ -100,6 +122,7 @@ export default function Navbar({ navScrolled, mobileMenuOpen, setMobileMenuOpen,
         </div>
       </header>
 
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
           style={{
@@ -124,7 +147,7 @@ export default function Navbar({ navScrolled, mobileMenuOpen, setMobileMenuOpen,
             { id: 'transformation', label: '✨ Before & After' },
             { id: 'why', label: '💎 Why VIZHQO' },
             { id: 'process', label: '🚀 How It Works' },
-            { id: 'pricing', label: '🏷️ Pricing & Quote Calculator' },
+            { id: 'pricing', label: '🏷️ Pricing & Quote' },
             { id: 'niches', label: '🏢 Built For You' },
           ].map((item) => (
             <button

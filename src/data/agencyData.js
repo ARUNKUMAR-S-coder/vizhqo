@@ -1,4 +1,4 @@
-﻿import {
+import {
   IMG_HERO,
   IMG_DINER,
   IMG_SALON,
@@ -12,8 +12,8 @@ export const WHATSAPP_NUMBER = '919944747738';
 export const DEFAULT_WA_MSG = 'Hi VIZHQO, I saw your website and I would like to know about your services.';
 
 export function getWhatsAppUrl(customText) {
-  const text = customText || DEFAULT_WA_MSG;
-  return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+  // Redirect to Instagram DM instead of WhatsApp
+  return 'https://www.instagram.com/vizhqo/';
 }
 
 export const LOOKING_TO_CREATE = [
